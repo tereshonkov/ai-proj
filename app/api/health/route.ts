@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
-  return NextResponse.json({
-    status: 200,
-    time: new Date().toISOString(),
-  });
+export async function GET() {
+  return NextResponse.json(
+    { time: new Date().toISOString(), status: "ok" },
+    { status: 200 },
+  );
 }

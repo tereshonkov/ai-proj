@@ -5,13 +5,10 @@ export default function CounterForTest() {
   const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(count + 1);
+    setCount((prev) => prev + 1);
   };
   const decrement = () => {
-    setCount(count - 1);
-    if (count <= 0) {
-      setCount(0);
-    }
+    setCount((prev) => Math.max(0, prev - 1));
   };
   const reset = () => {
     setCount(0);

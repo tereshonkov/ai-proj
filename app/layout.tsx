@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ATTIA AI",
-  description: "Your AI assistant for your website",
+  title: "ATTIA AI — Intelligent AI Assistant",
+  description:
+    "An AI-powered chat assistant that uses your documents as a knowledge base to answer customer questions, provide relevant information, and handle conversations like a real manager.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

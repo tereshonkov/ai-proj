@@ -3,9 +3,9 @@ import * as z from "zod";
 
 export const env = createEnv({
   server: {
-    DB_PASSWORD: z.string().min(1, "DB_PASSWORD is required"),
+    SUPABASE_SECRET_KEY: z.string().min(1),
   },
   runtimeEnv: {
-    DB_PASSWORD: process.env.DB_PASSWORD,
+    SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
   },
 });

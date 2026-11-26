@@ -6,7 +6,11 @@ export const env = createEnv({
     NEXT_PUBLIC_SUPABASE_URL: z.url("NEXT_PUBLIC_SUPABASE_URL must be a valid URL"),
     NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: z
       .string()
-      .min(1, "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY is required"),
+      .min(1)
+      .startsWith(
+        "sb_publishable_",
+        "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY must be a valid Supabase publishable key"
+      ),
   },
   runtimeEnv: {
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
